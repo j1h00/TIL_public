@@ -17,7 +17,7 @@ algorithm problems from 'SW Expert Academy'
 
 :link: https://swexpertacademy.com/main/main.do
 
-## 알고리즘 정리
+## Algorithm_Note
 
 - 쉽게 잊어버리는 알고리즘 원리를 쉽게 풀어 작성한 노트 
 - 참고
