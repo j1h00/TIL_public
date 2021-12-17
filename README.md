@@ -1,6 +1,6 @@
 # :pencil2: TIL
 
-***private TIL repository go public on '2021-12-17'***
+***private TIL repository goes public on '2021-12-17'*** !!
 
 ## boj
 
