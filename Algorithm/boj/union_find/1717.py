@@ -9,24 +9,35 @@
     두 원소가 같은 집합에 포함되어 있는지를 확인하는 연산은 1 a b의 형태로 입력이 주어진다. 
     이는 a와 b가 같은 집합에 포함되어 있는지를 확인하는 연산이다
 """
+import sys
+sys.setrecursionlimit(10**6)
+input = sys.stdin.readline
+
+def find_set(x):
+    if x == p[x]:
+        return x
+
+    p[x] = find_set(p[x])
+    return p[x]
 
 def union(x, y):
-    root[y] = find(x)
-        
+    x = find_set(x)
+    y = find_set(y)
 
-def find(x):
-    if x != root[x]:
-        while x == root[x]:
-            x = root[x]
-    return x
-        
+    if x < y:
+        p[y] = x
+    else:
+        p[x] = y
+
 n, m = map(int, input().split())
-root = list(range(n+1))
+p = [i for i in range(n+1)]
 
 for _ in range(m):
     c, a, b = map(int, input().split())
     if c:
-        output = 'YES' if root[a] == root[b] else 'NO'
-        print(output)
+        if find_set(a) == find_set(b):
+            print('YES')
+        else:
+            print('NO')
     else:
         union(a, b)
