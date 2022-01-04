@@ -1,0 +1,118 @@
+# TIL : React Redux 
+
+## Redux ?!
+
+Vue 프레임워크에서 사용했던 vuex 와 기능적으로 유사하다. 
+
+https://ko.redux.js.org/tutorials/essentials/part-1-overview-concepts#what-is-redux
+
+> **Redux is a pattern and library for managing and updating application state, using events called "actions".** It serves as a centralized store for state that needs to be used across your entire application, with rules ensuring that the state can only be updated in a predictable fashion.
+
+### Why Should I Use Redux?
+
+>Redux helps you manage "global" state - state that is needed across many parts of your application.
+>
+>**The patterns and tools provided by Redux make it easier to understand when, where, why, and how the state in your application is being updated, and how your application logic will behave when those changes occur**. Redux guides you towards writing code that is predictable and testable, which helps give you confidence that your application will work as expected.
+
+- 앱의 여러 컴포넌트에서 사용되는 state 를 global state 로 관리할 수 있도록 돕는다. 
+
+### Why Should I Use Redux?
+
+>Redux is more useful when:
+>
+>- You have large amounts of application state that are needed in many places in the app
+>- The app state is updated frequently over time
+>- The logic to update that state may be complex
+>- The app has a medium or large-sized codebase, and might be worked on by many people
+
+- 여러 컴포넌트에서 동일한 state 를 사용해야 하는 경우가 많을 때  \
+- app state 가 자주 변경(update) 될 때
+- state 를 변경하는 로직이 복잡해질 때 
+
+### redux 기본 원리 
+
+```text
+Action -> Dispatch -> Store -> View
+```
+
+- 위와 같은 flux 패턴을 따른다.
+- vuex 의 단방향 데이터 흐름과 비슷하다. https://vuex.vuejs.org/vuex.png
+
+## install 
+
+**Redux Toolkit** 
+
+Redux 앱을 만드는데 필수적인 여러 패키지와 함수들을 포함.
+
+```bash
+# NPM
+npm install @reduxjs/toolkit
+
+# Yarn
+yarn add @reduxjs/toolkit
+```
+
+**React Redux app creation**
+
+```bash
+npx create-react-app my-app --template redux
+```
+
+**React-Redux** : Official React bindings for Redux
+
+https://react-redux.js.org/
+
+
+
+## 기본 예제 
+
+앱의 상태(state) 전부는 하나의 저장소(store) 내에 있는 객체 트리에 저장된다. 
+
+오직 액션(action) 을 통해 상태 트리를 변경할 수 있으며, 액션이 상태 트리를 어떻게 변경할 지 명시하기 위해 리듀서(reducers) 를 작성해야 한다. 
+
+```react
+import { createStore } from 'redux'
+
+/**
+ * 이것이 (state, action) => state 형태의 순수 함수인 리듀서입니다.
+ * 리듀서는 액션이 어떻게 상태를 다음 상태로 변경하는지 서술합니다.
+ *
+ * 상태의 모양은 당신 마음대로입니다: 기본형(primitive)일수도, 배열일수도, 객체일수도,
+ * 심지어 Immutable.js 자료구조일수도 있습니다.  오직 중요한 점은 상태 객체를 변경해서는 안되며,
+ * 상태가 바뀐다면 새로운 객체를 반환해야 한다는 것입니다.
+ *
+ * 이 예제에서 우리는 `switch` 구문과 문자열을 썼지만,
+ * 여러분의 프로젝트에 맞게
+ * (함수 맵 같은) 다른 컨벤션을 따르셔도 좋습니다.
+ */
+function counter(state = 0, action) {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1
+    case 'DECREMENT':
+      return state - 1
+    default:
+      return state
+  }
+}
+
+// 앱의 상태를 보관하는 Redux 저장소를 만듭니다.
+// API로는 { subscribe, dispatch, getState }가 있습니다.
+let store = createStore(counter)
+
+// subscribe()를 이용해 상태 변화에 따라 UI가 변경되게 할 수 있습니다.
+// 보통은 subscribe()를 직접 사용하기보다는 뷰 바인딩 라이브러리(예를 들어 React Redux)를 사용합니다.
+// 하지만 현재 상태를 localStorage에 영속적으로 저장할 때도 편리합니다.
+
+store.subscribe(() => console.log(store.getState())))
+
+// 내부 상태를 변경하는 유일한 방법은 액션을 보내는 것뿐입니다.
+// 액션은 직렬화할수도, 로깅할수도, 저장할수도 있으며 나중에 재실행할수도 있습니다.
+store.dispatch({ type: 'INCREMENT' })
+// 1
+store.dispatch({ type: 'INCREMENT' })
+// 2
+store.dispatch({ type: 'DECREMENT' })
+// 1
+```
+
