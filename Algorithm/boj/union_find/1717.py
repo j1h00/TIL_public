@@ -9,6 +9,7 @@
     두 원소가 같은 집합에 포함되어 있는지를 확인하는 연산은 1 a b의 형태로 입력이 주어진다. 
     이는 a와 b가 같은 집합에 포함되어 있는지를 확인하는 연산이다
 """
+# pypy3 로 실행 시 계속 메모리초과가 뜬다.. 왜지?
 import sys
 sys.setrecursionlimit(10**6)
 input = sys.stdin.readline
