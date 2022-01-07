@@ -25,9 +25,19 @@ https://ko.redux.js.org/tutorials/essentials/part-1-overview-concepts#what-is-re
 >- The logic to update that state may be complex
 >- The app has a medium or large-sized codebase, and might be worked on by many people
 
-- 여러 컴포넌트에서 동일한 state 를 사용해야 하는 경우가 많을 때  \
+- 여러 컴포넌트에서 동일한 state 를 사용해야 하는 경우가 많을 때  
 - app state 가 자주 변경(update) 될 때
 - state 를 변경하는 로직이 복잡해질 때 
+
+Redux 는 React 에 의존적이지 않다. 즉 Vue, Angular 뿐만 아니라, Vanilla Redux 도 사용이 가능하다. 
+
+**그 외**
+
+- undo, redo 가 쉽다. 
+
+- state recording
+
+- Module Reloading
 
 ### redux 기본 원리 
 
@@ -37,6 +47,10 @@ Action -> Dispatch -> Store -> View
 
 - 위와 같은 flux 패턴을 따른다.
 - vuex 의 단방향 데이터 흐름과 비슷하다. https://vuex.vuejs.org/vuex.png
+
+[생활코딩 Redux 여행의 지도](https://opentutorials.org/module/4078/24935)
+
+![img](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/4078/11034.png)
 
 ## install 
 
@@ -62,9 +76,9 @@ npx create-react-app my-app --template redux
 
 https://react-redux.js.org/
 
-
-
 ## 기본 예제 
+
+공식 문서의 기본 예제
 
 앱의 상태(state) 전부는 하나의 저장소(store) 내에 있는 객체 트리에 저장된다. 
 
@@ -115,4 +129,8 @@ store.dispatch({ type: 'INCREMENT' })
 store.dispatch({ type: 'DECREMENT' })
 // 1
 ```
+
+## 생활코딩 강의 정리
+
+Vanilla Redux 를 사용해보고  
 
