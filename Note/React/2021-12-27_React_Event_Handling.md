@@ -9,7 +9,7 @@ React 의 Event Handling 은 DOM 엘리먼트의 방식과 매우 유사하다. 
     HTML 의 경우 
 
     ```react
-    <button onclick="activateLasers()">
+    <button onClick="activateLasers()">
       Activate Lasers
     </button>
     ```
