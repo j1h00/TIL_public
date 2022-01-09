@@ -123,11 +123,13 @@ ReactDOM.render(
 
 컴포넌트 클래스에서 특별한 메서드를 선언하면, 마운트 혹은 언마운트 될 때 코드 작동 가능 
 
+lifecycle API 는 [mount, update, unmount ](https://reactjs.org/docs/react-component.html#the-component-lifecycle) 시 사용 가능
+
 ```react
 class Clock extends React.Component {
     // ...
     componentDidMount() {
- 	}
+ 		}
 
   	componentWillUnmount() {
   	}
