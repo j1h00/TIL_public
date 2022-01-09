@@ -8,7 +8,7 @@ export default class AddNumber extends Component {
                 <h1>Add Number</h1>
                 <input type="button" value="+" onClick={function() {
                     console.log('hello1')
-                    this.props.onClick(this.state.size);
+                    // this.props.onClick(this.state.size);
                 }.bind(this)}></input>
                 <input type="text" value={this.state.size} onChange={function(event) {
                     this.setState({size: Number(event.target.value)});
