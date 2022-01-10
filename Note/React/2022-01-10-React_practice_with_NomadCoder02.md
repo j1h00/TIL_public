@@ -1,4 +1,4 @@
-# TIL : React Practice with NC
+# TIL : React Practice with NC 01
 
 [ReactJS로 영화 웹 서비스 만들기](https://nomadcoders.co/react-for-beginners) 를 보고 React 를 복습하고 정리한 내용입니다.  
 
@@ -101,7 +101,13 @@ https://yts-proxy.now.sh/list_movies.json
 import axios from 'axios';
 // ... 
   getMovies = async () => {
-    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json")
+    const {
+      data: {
+        data: { 
+          movies }
+        }
+      } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+    this.setState({ movies, isLoading: false });
   }
   componentDidMount() {
     this.getMovies();
@@ -113,7 +119,49 @@ import axios from 'axios';
 
 ### 12.1 Rendering the Movies
 
+`Movie` 컴포넌트 생성
 
+```jsx
+import React from 'react';
+import PropTypes from 'prop-types';
+
+function Movie({ id, year, title, summary, poster}) {
+    return <h4>{title}</h4>
+}
+
+Movie.propTypes = {
+    id: PropTypes.number.isRequired,
+    year: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+    poster: PropTypes.string.isRequired,  
+};
+
+export default Movie;
+```
+
+- prop-types 로 prop 으로 받을 인자를 지정한다.
+
+`App` 에서 `<Movie>` 렌더링!
+
+```jsx
+  render() {
+    const { isLoading, movies } = this.state;
+    return <div>{isLoading ? "Loading..." : movies.map(movie => {
+      return (
+        <Movie 
+          id={movie.id} 
+          year={movie.year} 
+          title={movie.title} 
+          summary={movie.summary} 
+          poster={movie.medium_cover_image}
+        />
+      );
+    })}</div>;
+  }
+```
+
+- 삼항연산자를 이용하여, isLoading 이 false 인 경우(`getMovies()` 에서 await 가 완료된 경우) 에만 Movie 를 렌더링 한다.  
 
 
 

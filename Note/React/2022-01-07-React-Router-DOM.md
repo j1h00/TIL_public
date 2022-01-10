@@ -81,7 +81,7 @@ ReactDOM.render(
 );
 ```
 
-- react-router 도움을 적용하고 싶은 컴포넌트의 최상위 컴포넌트를 감싸주는 Wrapper Component 
+- react-router 도움을 적용하고 싶은 컴포넌트의 최상위 컴포넌트를 Wrapper Component 로 감싸준다.
 
 **Route**
 
@@ -153,7 +153,7 @@ function App() {
 
 **Link**
 
-지금은 `<a>` 클릭 시 페이지가 reload 된다. `Link` 를 이용하면 SPA 구현이 매우 간단하다. 
+지금은 `<a>` 클릭 시 페이지가 reload 된다. `<Link>` 를 이용하면 SPA 구현이 매우 간단하다. 
 
 ```react
 import {Link} from 'react-router-dom'
