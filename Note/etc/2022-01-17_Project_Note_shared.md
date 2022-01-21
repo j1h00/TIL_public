@@ -1,6 +1,6 @@
-# Project 내가 공유 자료 
+# Project 내가 공유한 자료 
 
-
+## 무료 강의 
 
 인프런 리액트 입문 강의 링크입니다! (총 3 파트)
 
@@ -9,14 +9,6 @@
 3. [https://www.inflearn.com/course/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EC%9E%85%EB%AC%B8-3#curriculum](https://www.inflearn.com/course/오픈소스-리액트-입문-3#curriculum)
 
 노마드 코더 리액트 강의 https://nomadcoders.co/react-for-beginners
-
-
-
-
-
-airbnb style guide
-
-https://github.com/airbnb/javascript/tree/master/react#basic-rules
 
 
 
@@ -31,6 +23,20 @@ redux 는 Vue 의 vuex 와 같은 기능을 합니당..
 3. react-redux (https://www.youtube.com/watch?v=fkNdsUVBksw&list=PLuHgQVnccGMDuVdsGtH1_452MtRxALb_7)
 
 
+
+## 컨벤션
+
+### airbnb style guide
+
+https://github.com/airbnb/javascript/tree/master/react#basic-rules
+
+### 커밋 메세지 컨벤션
+
+ [https://velog.io/@hanganda23/Git-Commit-%EB%A9%94%EC%84%B8%EC%A7%80-%EC%8A%A4%ED%83%80%EC%9D%BC](https://velog.io/@hanganda23/Git-Commit-메세지-스타일)
+
+
+
+## 지라 정리 사항
 
 발표 전에 회의할 일이 없을 것 같아서 MM 에 남깁니다! 아래 첨부한 md 파일 기준으로 Jira 이슈들 정리했고, (Epic - Story - SubTask 구조로) 담당자 배분은 아래와 같이 했습니다. 
 
@@ -47,21 +53,21 @@ redux 는 Vue 의 vuex 와 같은 기능을 합니당..
 
 
 
+## react routing 방법
+
 1. next js 라우팅 간단 사용법
 
 https://merrily-code.tistory.com/52
 
-1. react-router-dom 과의 차이
+2. react-router-dom 과의 차이
 
-[https://velog.io/@thsoon/next.js%EB%A5%BC-%EB%B0%B0%EC%9A%B0%EA%B8%B0-%EC%A0%84%EC%97%90](https://velog.io/@thsoon/next.js를-배우기-전에)
-
-
-
-커밋 메세지 컨벤션
-
- [https://velog.io/@hanganda23/Git-Commit-%EB%A9%94%EC%84%B8%EC%A7%80-%EC%8A%A4%ED%83%80%EC%9D%BC](https://velog.io/@hanganda23/Git-Commit-메세지-스타일)
+[Next.js를 배우기전에...!](https://velog.io/@thsoon/next.js를-배우기-전에)
 
 
+
+
+
+## 프로젝트 관리 
 
 [#Sprint](https://meeting.ssafy.com/s06p11a2/channels/helloworld#)
 
