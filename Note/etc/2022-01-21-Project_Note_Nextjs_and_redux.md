@@ -1,4 +1,4 @@
-# Project Note : Next.js 로그인 관리 
+# Project Note : Next.js + redux
 
 ### install 
 
@@ -128,43 +128,4 @@ export const wrapper = createWrapper(makeStore, {
 export default wrapper.withRedux(MyApp);
 ```
 
-
-
-### 로그인 상태 관리 
-
-로그인한 유저의 정보를 redux state 로 관리하기 위해서 redux 를 사용하고자 했다. 
-
-각각의 페이지에 새로 접근할 때마다, 로그인 여부를 확인하기 위해 
-
-- local storage 의 jwt 를 확인하고, 유저 정보를 요청하여 받아온다. 
-- redux store 에 유저 정보를 저장하고 관리한다. 
-
-둘 중 어떤게 더 좋은지는 잘 모르겠다.. => 추후에 찾아보자!
-
-
-
-일단 redux store 에 `isLoggedIn` 과 `userInfo` 를  state 로 선언하고, 로그인과 로그아웃 시에 이를 변경했다. 
-
-각각의 페이지에 접근할 때는, `react-redux` 에서 제공하는 hook 인 `useSelector` API 를 이용하여 `isLoggedIn` 에 접근하여 로그인 여부를 받아왔다.   
-
-ex) `index.js`
-
-```react
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Main from "../components/Main";
-import MainOnLogin from "../components/MainOnLogin";
-
-function Home() {
-  const { isLoggedIn } = useSelector((state) => state.isLoggedIn);
-
-  useEffect(() => {
-    console.log("Home useEffect", isLoggedIn);
-  }, [isLoggedIn]);
-
-  return <div>{!isLoggedIn ? <Main /> : <MainOnLogin />}</div>;
-}
-
-export default Home;
-```
 
