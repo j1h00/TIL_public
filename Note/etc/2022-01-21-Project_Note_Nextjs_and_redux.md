@@ -30,7 +30,7 @@ npm i redux-logger --save-dev # 필요한 경우에 설치
     - `index.js`
   - `index.js`
 
-`userInfo.js` 에는 유저 정보에 접근하는 reducer 와 initialState 를 선언하고, 
+`userInfo.js` 에는 유저 정보에 접근하는 redux reducer 를 선언하고,
 
 ```react
 // modules/userInfo.js
@@ -70,7 +70,7 @@ export default (state = initialState, action) => {
 
 
 
-`index.js` 에서 `combineReducer` 를 이용하여 rootReducer 를 선언했다. 또한 `next-redux-wrapper` 에서 제공하는 `HYDRATE` 를 action case 로 추가해주었다. `HYDRATE` 는 서버 사이드 데이터를 클라이언트 사이드 Store 에 통합해준다고 한다. 
+`index.js` 에서 `combineReducer` 를 이용하여 `rootReducer` 를 선언했다. 또한 `next-redux-wrapper` 에서 제공하는 `HYDRATE` 를 action case 로 추가해주었다. `HYDRATE` 는 서버 사이드 데이터를 클라이언트 사이드 Store 에 통합해준다고 한다. 
 
 ```react
 //modules/index.js
@@ -127,5 +127,4 @@ export const wrapper = createWrapper(makeStore, {
 // pages/_app.js
 export default wrapper.withRedux(MyApp);
 ```
-
 
