@@ -81,12 +81,3 @@ kill -9 <PID>
 sudo service nginx restart
 nohup java-jar <jar-name>.jar &
 ```
-
-
-
-
-
-
-
-
-
