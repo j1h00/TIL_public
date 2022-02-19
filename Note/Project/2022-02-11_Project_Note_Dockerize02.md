@@ -1,4 +1,4 @@
-# Project Note : Dockerize project 02
+# Project Note : Dockerize 02
 
 Dockerize project 01... 이어서 
 

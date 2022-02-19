@@ -1,4 +1,4 @@
-# Project Note : Dockerize project 01
+# Project Note : Dockerize 01
 
 ## Intro
 
