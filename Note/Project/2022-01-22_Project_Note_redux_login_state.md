@@ -42,7 +42,7 @@ export default Home;
 
 기존의 코드가 잘못 작성된 점을 발견했다. 
 
-redux store 는 새로고침, 즉 reload 할 때마다 초기화 된다. 따라서 기존의 코드에선, store 의 `initialState` 를 localstorage 에서 받아오는 방식으로 작성했는데, 아래 코드에서 `initialState` 의 `isLoggedIn` 가 계속 `true` 인 것을 확인했다.. 
+redux store 는 페이지가 로드 될 때마다 새로 생성된다. 기존 코드에선 store 의 `initialState` 를 localstorage 에서 받아오는 방식으로 작성했는데, 아래 코드에서 `initialState` 의 `isLoggedIn` 가 계속 `true` 인 것을 확인했다.. 
 
 ```react
 const getTokenToLocalStorange = async (token) => {
