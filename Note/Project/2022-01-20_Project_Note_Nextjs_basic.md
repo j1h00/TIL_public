@@ -18,6 +18,10 @@ CRA 구조와 다르게, src 폴더가 없고, 프로젝트 가장 상위에 pag
 
 또한 pages 폴더 내에, 2개의 파일을 추가했다. 
 
+> [Custom App: _app.js](https://nextjs.org/docs/advanced-features/custom-app)
+>
+> [Custom Document: _document.js](https://nextjs.org/docs/advanced-features/custom-document)
+
 ```react
 //_app.js
 import Navbar from "../components/Navbar";
@@ -41,8 +45,9 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-- `_app.js` 는 page 컴포넌트가 렌더링 될 때 거쳐가는 root 컴포넌트와 역할이 같다. 
-- css 파일을 `_app.js` 에 위치시키면 전역에 적용이 가능하다. navbar, footer 와 같은 컴포넌트도 마찬가지!
+- `_app.js` 는 모든 컴포넌트가 렌더링 될 때 거쳐가는 root 컴포넌트 역할을 한다.
+- css 파일을 `_app.js` 에 위치시키면 전역에 적용이 가능하다. 
+- page 간 이동 시, state 를 유지하고 싶을 경우 `_app.js` 를 통해 전달한다.
 
 ```react
 //_document.js
@@ -105,7 +110,7 @@ import styles from "../styles/footer.module.css"
 // ... 
 ```
 
-위와 같이 객체로 접근해야 한다... 후... 
+위와 같이 객체로 접근해야 한다. (*추후에 조금 더 심플한 방법을 찾아 Next.js tips 글에 정리했다)
 
 ### routing
 
@@ -149,6 +154,8 @@ Next js 에서 useEffect, getStaticProps, getServerSideProps 의 차이를 구�
 서버에서 데이터를 가지고 오기 위해 axios 요청을 언제 보내야 하는지, redux store 의 값을 언제 가져와서 사용해야 할 지.. 고민이 많았는데, 위의 두 글을 읽고 어느 정도 해소됐다.  
 
 덕분에 CSR 과 SSG, SSR 을 각각 언제 써야하는지 명확히 알게 되었다!
+
+(*추후에 프로젝트에 적용한 내용을 Next.js tips 글에 정리했다. )
 
 
 
