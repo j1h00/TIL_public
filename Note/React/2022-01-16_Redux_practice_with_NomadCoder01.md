@@ -211,9 +211,9 @@ function Home({ toDos }) {
 	// ...
 }
 
-//mapStateToProps
-function getCurrentState(state) {
-  return { toDos: state }
+// mapStateToProps : 1st argument == state (getstate)
+function getCurrentState(state) {  
+  return { toDos: state } 
 }
 
 export default connect(getCurrentState)(Home);
@@ -223,3 +223,48 @@ export default connect(getCurrentState)(Home);
   - 이를 통해, redux store 의 state 를 Home 컴포넌트에 props 로 전달하는 것이 가능함! 
 
 ### mapDispatchToProps 
+
+`connect()` 의 두번째 인자!
+
+```react
+function Home({ toDos, dispatch }) {
+	// ...
+    dispatch(addToDo(text)) // addToDo 는 action creator
+}
+
+function mapDispatchToProps(dispatch, ownprops) {
+    return dispatch 
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+```
+
+- 단순히 dispatch 를 리턴하여 Home 컴포넌트에 prop 으로 전달한다. 
+
+```react
+function Home({ toDos, addToDo }) {
+	// ...
+    dispatch() 
+}
+
+function mapDispatchToProps(dispatch, ownprops) {
+    return {
+        addToDo: (text) => dispatch(actionCreators.addToDo(text))
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+```
+
+- `mapDispatchToProps` 는 `addToDo` 함수를 리턴한다. 
+  - `addToDo` 는 `text` 를 인자로 받아 `actionCreator` 인 `addToDo` 를 인자로 하는 dispatch 를 호출한다. 
+  - 이렇게 되면, Home 컴포넌트에서는 dispatch 를 사용하지 않는다. 
+
+
+
+
+
+
+
+
+
