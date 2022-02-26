@@ -1,6 +1,4 @@
 from collections import deque
-
-
 # bfs 로 해결해보자 
 def solution(n, computers):
     answer = 0
