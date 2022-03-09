@@ -12,7 +12,7 @@ CNA(create-next-app) 로 프로젝트를 생성하여, 기존의 코드와 파�
  npm create-next-app
  ```
 
-CRA 구조와 다르게, src 폴더가 없고, 프로젝트 가장 상위에 pages 폴더를 통해 routing 기능을 사용할 수 있다. 
+CRA 구조와 다르게, src 폴더가 없고, 프로젝트 최상위의 pages 폴더를 통해 routing 기능을 사용할 수 있다. 
 
 내 프로젝트에는 public 폴더에 이미지 파일, styles 폴더에 css 파일을 담고, components 폴더를 생성하여 컴포넌트를 담았다. 
 

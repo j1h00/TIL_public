@@ -1,20 +1,18 @@
 # Project Note : react-toastify
 
-https://fkhadra.github.io/react-toastify/introduction
+> **>** [react-toastify](https://fkhadra.github.io/react-toastify/introduction)
 
-매우 귀엽고 사용이 간단한 알림창 라이브러리!
+사용이 간단한 알림창 라이브러리!
 
-나의 경우엔, `<ToastContainer>` 컴포넌트를 루트 페이지에 선언하고 (이렇게 하면 페이지 전환 시에도 알림창이 남아있다! )
+나의 경우엔, `<ToastContainer>` 컴포넌트를 루트 페이지에 선언하고 (이렇게 하면 페이지 전환 시에도 알림창이 유지됨 )
 
 Toast Emitter 인 `toast("Alarm Message")` 로 로그인, 로그아웃 등의 경우에 알림창을 발생시켰다. 
 
-playground 에서 데모를 사용해볼 수 있다!
-
-
+react-toastify playground 에서 데모를 사용해볼 수 있다!
 
 ## promise 
 
-`toast.promise` 를 이용하면, 데이터 fetching 시 필요한 로딩 창을 쉽게 구현할 수 있을 것으로 보인다. 
+추가로, `toast.promise` 를 이용하면, 데이터 fetching 시 필요한 로딩 창을 쉽게 구현할 수 있을 것으로 보인다. 
 
 https://fkhadra.github.io/react-toastify/promise
 

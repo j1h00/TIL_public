@@ -55,7 +55,7 @@ $ docker-compose -v
 
  Next.js 컨테이너를 NGINX reverse proxy 로 감싸 배포하는 것에 도전하였다. (Reverse Proxy 에 대한 설명은 [Nginx Reverse Proxy 사용하기](https://medium.com/sjk5766/nginx-reverse-proxy-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-e11e18fcf843) 참고!). 이 경우, Next.js 컨테이너에 직접 접속하지 않으므로 보안상의 이점이 있고, Cache 사용, 로드 밸런싱 등의 기능도 추가적으로 사용할 수 있다. 
 
-> [Set up Docker and NGINX for a Next.js app](Set up Docker and NGINX for a Next.js app)
+> [Set up Docker and NGINX for a Next.js app](https://steveholgado.com/nginx-for-nextjs/)
 
 위 글을 참고하면, Next.js 프로젝트와 NGINX 를 동시에 컨테이너화하여 구동할 수 있다.  
 
