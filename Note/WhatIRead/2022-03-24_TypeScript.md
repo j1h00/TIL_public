@@ -1,16 +1,12 @@
-# What I Read 
+# What I Read : TypeScript
 
-Velog 인기글을 읽고, 좋은 내용은 정리해두고 싶어서 기록한다. 
-
-## 2022-03-01 
+좋은 블로그 내용은 정리해두고 싶어서 기록한다. 
 
 >[Velog: [최적화] 웹 성능 최적화 방법 5분 완성](https://velog.io/@hsecode/%EC%B5%9C%EC%A0%81%ED%99%94-%EC%9B%B9-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94-%EB%B0%A9%EB%B2%95-5%EB%B6%84-%EC%99%84%EC%84%B1)
 >
 >[Velog: 나는 리액트를 어떻게 설계할 것인가](https://velog.io/@dahye-program/%EB%82%98%EB%8A%94-%EB%A6%AC%EC%95%A1%ED%8A%B8%EB%A5%BC-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%84%A4%EA%B3%84%ED%95%A0-%EA%B2%83%EC%9D%B8%EA%B0%80)
 
 - good!
-
-
 
 >[Velog: Typescript는 어떻게 공부해야 하나요?](https://velog.io/@teo/typescript)
 
