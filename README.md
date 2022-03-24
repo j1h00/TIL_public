@@ -1,18 +1,24 @@
 # :pencil2: Today I Learned
 
 하루하루 공부한 내용을 정리하고 기록합니다. 
-README 를 끝까지 읽어주세요 😎
 
-목차
+```
+.
+├── README.md
+├── Algorithm
+│   ├── boj
+│   ├── SWEA
+│   ├── programmers
+│		└── Algorithm_Note 
+├── Note
+│   ├── CS
+│   ├── JavaScript
+│   ├── Project  
+│   ├── React
+└── Toy-project
+```
 
-- 알고리즘
-- Note 
-- Toy project
-- More 
-
-
-
-## 알고리즘
+## Algorithm
 
 ### boj
 
@@ -65,8 +71,7 @@ react, react-router, redux 등을 공부하며 생성한 토이 프로젝트 코
 contact 
 
 - phone : 010-4159-7223
-- email : guruboy@snu.ac.kr (확인 잘 못함)
-
+- email : guruboy@snu.ac.kr 
 
 
 
