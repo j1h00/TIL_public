@@ -65,8 +65,6 @@ https://merrily-code.tistory.com/52
 
 
 
-
-
 ## 프로젝트 관리 
 
 [#Sprint](https://meeting.ssafy.com/s06p11a2/channels/helloworld#)

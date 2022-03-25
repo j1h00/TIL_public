@@ -1,4 +1,4 @@
-# Project 내가 공유한 자료  2
+# Project Note : Git
 
 ## Git
 
@@ -76,7 +76,7 @@ GitLab 에서 확인 시, 원격에선 브랜치가 삭제되어있는데,  로�
 
 1. 로컬에서 모든 브랜치 확인
 
-```
+```bash
 $ git branch -a
 ```
 
@@ -84,12 +84,87 @@ $ git branch -a
 
 2. 로컬에서 "원격 브랜치 참조" 동기화
 
-```
-git remote update origin --prune
+```bash
+$ git remote update origin --prune
 ```
 
 3. 필요 없는 로컬 브랜치 삭제
 
-```
+```bash
 $ git branch -d <branchname>
 ```
+
+
+
+### 커밋 메시지 수정 
+
+가장 최근 커밋 
+
+```bash
+$ git commit --amend
+```
+
+최근 커밋을 확인 
+
+```bash
+$ git log 
+$ git rebase -i HEAD~3
+```
+
+- 변경을 원하는 커밋의 pick 을 reword 로 변경
+- 차례대로 커밋 수정!
+
+
+
+### 명령 취소 
+
+add 취소 (stage => unstage)
+
+```bash
+# unstage all recent staged 
+$ git reset HEAD
+
+# unstage file
+$ git reset HEAD <file_name>
+```
+
+commit 취소 
+
+```bash
+# recent commit 
+$ git reset HEAD^
+
+# 2 commits
+$ git reset HEAD~2
+```
+
+
+
+### 브랜치 이름 변경 
+
+브랜치 이름 변경 
+
+```bash
+$ git branch -m <old_branch> <new_branch>
+```
+
+원격 브랜치 생성 삭제 
+
+```bash
+# push to new branch 
+$ git push origin new_branch
+
+# delete old branch 
+$ git push origin :<old_branch>
+#or 
+$ git push origin --delete old_branch
+
+
+#or
+$ git push origin :old_branch new_branch
+```
+
+
+
+
+
