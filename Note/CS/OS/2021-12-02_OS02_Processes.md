@@ -62,7 +62,7 @@ $ size ./a.out
 - Ready : the process is waiting to be assigned to a processor 
 - Terminated : the process has finished execution 
 
- ![image-20211202195234145](2021-11-30_OS02.assets/image-20211202195234145.png)
+ ![image-20211202195234145](2021-12-02_OS02_Processes.assets/image-20211202195234145.png)
 
 **PCB or TCB**
 
