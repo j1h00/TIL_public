@@ -1,6 +1,6 @@
 # Project Note: Maven dependency
 
-> [[How to add dependency to Ant project](https://stackoverflow.com/questions/26650590/how-to-add-dependency-to-ant-project)]
+> [How to add dependency to Ant project](https://stackoverflow.com/questions/26650590/how-to-add-dependency-to-ant-project)
 
 Ant 프로젝트를 빌드 시, dependecy 를 추가하기 위해서는 ivy 라는 또 다른 패키지 관리자가 필요했다. 
 
@@ -8,7 +8,7 @@ Ant 프로젝트를 빌드 시, dependecy 를 추가하기 위해서는 ivy 라�
 
 > [How to convert Ant project to Maven project](https://stackoverflow.com/questions/4029501/how-to-convert-ant-project-to-maven-project)
 
-이를 위해 기존의 `build.xml` 의 내용을 `pom.xml` 로 옮기고, 소스파일을 `src/main/java` 의 하위로 옮겨야했따. 
+이를 위해 위 글을 참고하여, 기존의 `build.xml` 의 내용을 `pom.xml` 로 옮기고, 소스파일을 `src/main/java` 의 하위로 옮겨야했다.
 
  이후, kafka-client dependency 를 추가하고, plugin 을 이용하여 manifest 를 작성하였다. 
 
@@ -61,5 +61,22 @@ kafka-client 패키지의 클래스를 찾을 수 없다는 에러였는데, 빌
 
 답변에 의하면 java agent 는 `-jar` 옵션으로 실행되지 않기 때문에, dependency 가 자동으로 추가되지 않는 것으로 보였다. 맞는지는 한 번 더 확인해봐야 할 것으로 보인다. 
 
-일단 오늘은 여기까지!
+2022-04-21 이어서.. 
+
+답변을 상세히 확인해보니, Java `Instrumentation` API 를 사용해보라는 내용이 있어 시도하였다. 
+
+>[Adding jar file to instrumentation path](https://stackoverflow.com/questions/38213651/adding-jar-file-to-instrumentation-path)
+
+- Intrumentation 객체의 `appendToSystemClassLoaderSearch `메서드를 이용하면 java agent 실행 시 system class loader 에 의해 JAR 파일이 정의되도록 할 수 있다.. 
+- 정확한 구동 방식은 이해를 못했지만, 동작은 잘 되었다. 
+
+또 다른 방법으로 `maven-dependency-plugin` 을 등록하고 `mvn install dependency:copy-dependencies` 명령어를 실행하면, 자동으로 dependency 폴더가 생성되고 그 안에 의존하는 `.jar` 파일이 모두 복사된 것을 확인할 수 있다.  
+
+`maven-jar-plugin` 설정 시 classpath prefix 를 lib 으로 설정해두었기 때문에,  모든 `.jar` 파일들은 dependency 가 아니라 lib 경로에 존재해야 했다. 그러나 `maven-dependency-plugin` 설정 시 output directory 를 lib 으로 작성해도 dependency 폴더만 생성되어, 어쩔 수 없이 수동으로 dependency 폴더 이름을 lib 으로 변경하였다.  
+
+그 이후 약간의 문제가 있었지만, agent 가 잘 동작하였다. 
+
+- `Failed to load class org.slf4j.impl.StaticLoggerBinder`  라는 slf4j 관련 warning message 가 출력되는데, 원인은 알 수 없었다.. 
+
+   
 
