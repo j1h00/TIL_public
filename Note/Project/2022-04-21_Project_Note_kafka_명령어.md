@@ -25,6 +25,7 @@ zookeeper 서버 먼저 실행 후, kafka 서버 실행
 
 ```shell
 # 리눅스의 경우 
+$ bin/zookeeper-server-start.sh config/z.properties 
 $ bin/kafka-server-start.sh config/server.properties 
 
 # 윈도우의 경우 
