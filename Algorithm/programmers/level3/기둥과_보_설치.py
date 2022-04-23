@@ -57,6 +57,7 @@
 #     return answer
 
 
+# reference to : https://velog.io/@tjdud0123/%EA%B8%B0%EB%91%A5%EA%B3%BC-%EB%B3%B4-%EC%84%A4%EC%B9%98-2020-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EA%B3%B5%EC%B1%84-python
 def impossible(built):
     for x, y, a in built:
         if not a: # 기둥인 경우
@@ -85,6 +86,8 @@ def solution(n, build_frame):
     list_built = map(list, built)
 
     return sorted(list_built, key = lambda x: (x[0], x[1], x[2]))
+
+
 
 answer1 = solution(5, [[0,0,0,1],[2,0,0,1],[4,0,0,1],[0,1,1,1],[1,1,1,1],[2,1,1,1],[3,1,1,1],[2,0,0,0],[1,1,1,0],[2,2,0,1]])
 print(answer1)
