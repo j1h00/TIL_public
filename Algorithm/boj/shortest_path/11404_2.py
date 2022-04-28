@@ -12,7 +12,7 @@ for i in range(m):
     if graph[A-1][B-1] > C:
         graph[A-1][B-1] = C 
     
-
+# 모든 도시의 쌍 (A, B)에 대해서 도시 A에서 B로 가는데 필요한 비용의 최솟값을 구하는 프로그램을 작성하시오.
 # Floyd-Warshall algorithm 
 # 삼중 for loop 을 거치므로, 그래프의 크기가 작아 세제곱 시간을 적용해도 문제 없을 때 사용 가능.
 for r in range(n): # 중간 노드가 될 번호를 가장 바깥의 for 문에 위치시킨다. 
