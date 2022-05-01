@@ -6,9 +6,6 @@
 # 연합을 이루고 있는 각 칸의 인구수는 (연합의 인구수) / (연합을 이루고 있는 칸의 개수)가 된다. 편의상 소수점은 버린다.
 # 연합을 해체하고, 모든 국경선을 닫는다.
 
-
-from pprint import pprint
-
 from collections import deque
 directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
@@ -18,6 +15,7 @@ arr = []
 for i in range(N):
     arr.append(list(map(int, input().split())))
 
+# bfs 탐색
 def bfs(i, j, populations, visited):
     q = deque([(i, j)])
     visited[i][j] = 1
