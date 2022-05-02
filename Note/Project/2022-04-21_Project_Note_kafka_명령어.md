@@ -25,7 +25,7 @@ zookeeper 서버 먼저 실행 후, kafka 서버 실행
 
 ```shell
 # 리눅스의 경우 
-$ bin/zookeeper-server-start.sh config/z.properties 
+$ bin/zookeeper-server-start.sh config/zookeeper.properties 
 $ bin/kafka-server-start.sh config/server.properties 
 
 # 윈도우의 경우 
@@ -39,7 +39,7 @@ topic 생성 / 조회 / 삭제
 $ kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 -partitions 1 --topic test-topic
 
 # topic list 확인
-$ kafka-topics.bat --list --bootstrap-server localhost:9092
+$ bin/windows/kafka-topics.bat --list --bootstrap-server localhost:9092
 
 # topic 상세 조회 
 $ kafka-topics.bat --describe --topic test-topic --bootstrap-server localhost:9092
