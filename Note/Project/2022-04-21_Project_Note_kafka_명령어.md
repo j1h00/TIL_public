@@ -40,6 +40,8 @@ $ kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-fact
 
 # topic list 확인
 $ bin/windows/kafka-topics.bat --list --bootstrap-server localhost:9092
+$ bin/kafka-topics.sh --list --zookeeper localhost:2181
+
 
 # topic 상세 조회 
 $ kafka-topics.bat --describe --topic test-topic --bootstrap-server localhost:9092
@@ -56,6 +58,7 @@ $ kafka-console-producer.bat --broker-list localhost:9092 --topic test-topic
 
 # consumer 
 $ kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+$ bin/kafka-console-consumer.sh --bootstrap-server k6s102.p.ssafy.io:8092 --topic json_log --from-beginning
 ```
 
 
@@ -95,4 +98,3 @@ private void sendThreadDumps () {
 ```
 
 - 위 메서드를 실행한 뒤, 로컬에서 `kafka-console-consumer` 로 메시지 전송 여부를 확인 가능하다. 
-
