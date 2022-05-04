@@ -55,6 +55,7 @@ producer & consumer test
 ```shell
 # producer
 $ kafka-console-producer.bat --broker-list localhost:9092 --topic test-topic
+$ bin/kafka-console-producer.sh --broker-list k6s102.p.ssafy.io:8092 --topic test-topic
 
 # consumer 
 $ kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic --from-beginning
