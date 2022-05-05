@@ -174,7 +174,7 @@ Collection 에 JSON 형태의 Document (하나의 record) 를 넣는다.
 ```bash
 # mongo shell 시작 
 $ mongo # local 
-$ mongo -- host 'host_address' --port 'port' # remote
+$ mongo --host 'host_address' --port 'port' # remote
 
 # 전체 DB 열람
 show dbs 
