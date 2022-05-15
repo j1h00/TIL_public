@@ -1,0 +1,145 @@
+[
+  {
+    "email": "chandra@programmers.co.kr",
+    "profile": {
+      "name": "Chandra",
+      "birthday": "2002-12-01",
+      "address": "9 Bayard Street, Worcester, Puerto Rico"
+    },
+    "score": 96,
+    "createdAt": "2010-09-02T06:05:21.638Z",
+    "updatedAt": "2010-09-03T06:05:21.638Z"
+  },
+  {
+    "email": "dawn@programmers.co.kr",
+    "profile": {
+      "name": "Dawn",
+      "birthday": "2001-03-18",
+      "address": "82 Seaview Court, Gadsden, New Hampshire"
+    },
+    "score": 80,
+    "createdAt": "2011-10-16T16:56:00.532Z",
+    "updatedAt": "2011-10-17T16:56:00.532Z"
+  },
+  {
+    "email": "strong@programmers.co.kr",
+    "profile": {
+      "name": "Strong",
+      "birthday": "1989-10-08",
+      "address": "54 Lewis Avenue, Emerald, Mississippi"
+    },
+    "score": 94,
+    "createdAt": "2010-07-03T01:12:12.403Z",
+    "updatedAt": "2010-07-04T01:12:12.403Z"
+  },
+  {
+    "email": "noreen@programmers.co.kr",
+    "profile": {
+      "name": "Noreen",
+      "birthday": "1992-07-12",
+      "address": "90 Linden Boulevard, Barrelville, North Dakota"
+    },
+    "score": 94,
+    "createdAt": "2012-03-11T14:26:09.634Z",
+    "updatedAt": "2012-03-12T14:26:09.634Z"
+  },
+  {
+    "email": "gross@programmers.co.kr",
+    "profile": {
+      "name": "Gross",
+      "birthday": "1999-07-08",
+      "address": "82 Cadman Plaza, Witmer, Virgin Islands"
+    },
+    "score": 62,
+    "createdAt": "2012-10-21T07:10:51.750Z",
+    "updatedAt": "2012-10-22T07:10:51.750Z"
+  },
+  {
+    "email": "autumn@programmers.co.kr",
+    "profile": {
+      "name": "Autumn",
+      "birthday": "1993-08-28",
+      "address": "40 Portland Avenue, Austinburg, Marshall Islands"
+    },
+    "score": 90,
+    "createdAt": "2012-10-10T13:32:35.579Z",
+    "updatedAt": "2012-10-11T13:32:35.579Z"
+  },
+  {
+    "email": "howe@programmers.co.kr",
+    "profile": {
+      "name": "Howe",
+      "birthday": "2007-09-07",
+      "address": "26 Railroad Avenue, Websterville, Colorado"
+    },
+    "score": 57,
+    "createdAt": "2014-07-17T02:53:52.074Z",
+    "updatedAt": "2014-07-18T02:53:52.074Z"
+  },
+  {
+    "email": "jacobs@programmers.co.kr",
+    "profile": {
+      "name": "Jacobs",
+      "birthday": "1997-10-20",
+      "address": "56 Woodrow Court, Caln, South Carolina"
+    },
+    "score": 85,
+    "createdAt": "2010-06-24T23:06:36.311Z",
+    "updatedAt": "2010-06-25T23:06:36.311Z"
+  },
+  {
+    "email": "judy@programmers.co.kr",
+    "profile": {
+      "name": "Judy",
+      "birthday": "1986-06-08",
+      "address": "48 George Street, Frystown, Palau"
+    },
+    "score": 68,
+    "createdAt": "2014-06-03T20:15:12.354Z",
+    "updatedAt": "2014-06-04T20:15:12.354Z"
+  },
+  {
+    "email": "nguyen@programmers.co.kr",
+    "profile": {
+      "name": "Nguyen",
+      "birthday": "1986-04-15",
+      "address": "25 Cambridge Place, Courtland, Louisiana"
+    },
+    "score": 70,
+    "createdAt": "2013-11-19T07:21:08.115Z",
+    "updatedAt": "2013-11-20T07:21:08.115Z"
+  },
+  {
+    "email": "christy@programmers.co.kr",
+    "profile": {
+      "name": "Christy",
+      "birthday": "2003-09-22",
+      "address": "43 Seagate Avenue, Machias, District Of Columbia"
+    },
+    "score": 100,
+    "createdAt": "2013-11-30T15:08:03.441Z",
+    "updatedAt": "2013-12-01T15:08:03.441Z"
+  },
+  {
+    "email": "burton@programmers.co.kr",
+    "profile": {
+      "name": "Burton",
+      "birthday": "1997-10-30",
+      "address": "42 Visitation Place, Wolcott, New York"
+    },
+    "score": 92,
+    "createdAt": "2012-05-05T21:21:59.939Z",
+    "updatedAt": "2012-05-06T21:21:59.939Z"
+  },
+  {
+    "email": "jody@programmers.co.kr",
+    "profile": {
+      "name": "Jody",
+      "birthday": "2009-09-03",
+      "address": "61 Brightwater Avenue, Loomis, Alaska"
+    },
+    "score": 63,
+    "createdAt": "2012-11-28T01:43:07.841Z",
+    "updatedAt": "2012-11-29T01:43:07.841Z"
+  }
+]
