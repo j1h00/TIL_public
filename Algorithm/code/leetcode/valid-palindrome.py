@@ -1,8 +1,5 @@
 # https://leetcode.com/problems/valid-palindrome/
 
-from re import A
-
-
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
@@ -22,12 +19,24 @@ class Solution:
             
         return True
 
-                  
-    
-        
-        
+# most viewed answer 
+def isPalindrome(self, s):
+    l, r = 0, len(s) - 1
+    while l < r:
+        if not s[l].isalnum():  # 영어, 한글, 숫자일 경우 True, else false 
+            l += 1
+        elif not s[r].isalnum():
+            r -= 1
+        else:
+            if s[l].lower() != s[r].lower():
+                return False
+            else:
+                l += 1
+                r -= 1
+    return True
 
-solution = Solution()
-
-solution.isPalindrome("A man, a plan, a canal: Panama")
-
+# short 
+class Solution:
+    def isPalindrome(self, s):
+        s = ''.join(e for e in s if e.isalnum()).lower()
+        return s==s[::-1]
