@@ -37,14 +37,16 @@ class Solution:
         # @param {integer[]} nums
         # @return {integer[]}
         def productExceptSelf(self, nums):
-            p = 1
             n = len(nums)
             output = []
-            for i in range(0,n):
+
+            p = 1
+            for i in range(0,n): # forward
                 output.append(p)
                 p = p * nums[i]
+
             p = 1
-            for i in range(n-1,-1,-1):
+            for i in range(n-1,-1,-1): # backward
                 output[i] = output[i] * p
                 p = p * nums[i]
             return output
