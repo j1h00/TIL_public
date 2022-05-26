@@ -28,15 +28,72 @@
 
 0. 모든 정점의 진입 차수를 in_degree 에 설정
 
+
+
 1. 진입 차수가 0인 정점(즉, 들어오는 간선의 수가 0)을 선택
+
    - 진입 차수가 0인 정점이 여러 개 존재할 경우 어느 정점을 선택해도 무방하다.
+
    - 초기에 간선의 수가 0인 모든 정점을 큐에 삽입
 
 2. 선택된 정점과 여기에 부속된 모든 간선을 삭제
+
    - 선택된 정점을 큐에서 삭제
+
    - 선택된 정점에 부속된 모든 간선에 대해 간선의 수를 감소
 
-3. 위의 과정을 반복해서 모든 정점이 선택, 삭제되면 알고리즘 종료
+3.  1 - 2 번의 과정을 반복해서 모든 정점이 선택, 삭제되면 알고리즘 종료
+
+
+
+### 1516 게임 개발
+
+```python
+from collections import deque
+
+# 위상 정렬을 이용한 풀이
+# initialize 
+N = int(input())
+
+in_degree = [0] * (N+1)
+time = [0] * (N+1)
+build_after = { k:[] for k in range(1, N+1) } # k 가 있을 때, 지을 수 있는 건물
+q = deque() # queue for topological sort
+
+for a in range(1, N+1):
+    info = input().split()
+    time[a] = int(info[0])
+    for b in info[1:]:
+        if b == "-1":
+            break 
+        else:
+            build_after[int(b)].append(a)
+            in_degree[a] += 1
+
+    if not in_degree[a]:
+        q.append(a)
+
+# topological sort
+result = [0] * (N+1)
+
+while q:
+    now = q.popleft()
+
+    result[now] += time[now]
+    for b in build_after[now]:
+        in_degree[b] -= 1
+
+        # 걸리는 최소 시간.. 만약 now 가 아니라 다른 선수 건물이 있는 경우, 
+        # 그 선수 건물을 만들기까지 더 오래걸린다면 ?
+        result[b] = max(result[b], result[now]) 
+        if not in_degree[b]:
+            q.append(b)
+
+for answer in result[1:]:
+    print(answer)
+```
+
+>[[BOJ 1516] 게임 개발 (Python)](https://velog.io/@kimdukbae/BOJ-1516-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-Python) 참고
 
 
 
