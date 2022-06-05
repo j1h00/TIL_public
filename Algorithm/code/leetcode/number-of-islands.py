@@ -87,3 +87,5 @@ class Solution:
             if 0<=i<len(grid) and 0<=j<len(grid[0]) and grid[i][j]=='1' and check[i][j]==False:
                 check[i][j] = True
                 qu.extend([(i-1,j),(i+1,j),(i,j-1),(i,j+1)])
+
+
