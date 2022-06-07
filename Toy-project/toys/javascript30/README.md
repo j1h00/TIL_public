@@ -47,3 +47,9 @@
   - 사용 시엔, 선택한 요소의 `dataset` 속성에 접근하여 사용
     - `const suffix = this.dataset.sizing || "";`
 
+
+
+### [Array cardio 1](./javascript30/array-cardio)
+
+- `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
+  - 따라서 `map()` 함수를 사용할 수 없다.  
