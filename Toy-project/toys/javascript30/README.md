@@ -6,7 +6,7 @@
 
 - vanilla JS 연습을 위해 위 강좌를 보고 진행한 토이 프로젝트
 
-### [Drum kit](./javascript30/drum-kit)
+### [Drum kit](./01 - JavaScript Drum Kit)
 
 - data-key 를 이용한 DOM select
 - [keycode info](https://www.toptal.com/developers/keycode)
@@ -19,7 +19,7 @@
 
 
 
-### [Clock](./javascript30/clock)
+### [Clock](./02 - JS and CSS Clock)
 
 - 시침, 분침, 초침이 원의 중심을 기준으로 `rotate()` 하는게 중요
   - `transform-origin: 100%;`
@@ -29,7 +29,7 @@
 
 
 
-### [CSS variables](./javascript30/CSS-variable)
+### [CSS variables](./03 - CSS Variables)
 
 - `:root` pseudo class 
   - document tree 의 루트 요소를 선택
@@ -49,7 +49,19 @@
 
 
 
-### [Array cardio 1](./javascript30/array-cardio)
+### [Array cardio 1](./04 - Array Cardio Day 1)
 
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
   - 따라서 `map()` 함수를 사용할 수 없다.  
+
+
+
+### [Flex Panel Gallery](./05 - Flex Panel Gallery)
+
+All about CSS
+
+- `flex` 속성 
+  - `flex: 1` 
+  - `flex: 1 0 auto` 
+  - 
+
