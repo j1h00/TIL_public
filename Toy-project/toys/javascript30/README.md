@@ -54,13 +54,6 @@
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
   - 따라서 `map()` 함수를 사용할 수 없다.  
 
-### [Array cardio 1](./04 - Array Cardio Day 1)
-
-- `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
-  - 따라서 `map()` 함수를 사용할 수 없다.  
-
-
-
 
 
 ### [Flex Panel Gallery](./05 - Flex Panel Gallery)
@@ -117,4 +110,50 @@ All about CSS
   	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   ```
+
+
+
+### [Array cardio 2](./07 - Array Cardio Day 2)
+
+- `some()`, `every()`, `find()`, `findIndex()`
+
+- remove element from array **with index**
+
+  ```js
+  const index = comments.findIndex((comment) => comment.id === 823423);
+  comments.splice(index, 1);
+  ```
+
+
+
+### [HTML canvas](./08 - Fun with HTML5 Canvas)
+
+- `mousedown`, `mousemove`, `mouseup`, `mouseout` 이벤트
+
+- canvas 의 context 로 직선 그리기 
+
+  ```js
+  function draw(e) {
+      if (!isDrawing) return;
+      ctx.beginPath();
+      ctx.moveTo(lastX, lastY);
+      ctx.lineTo(e.offsetX, e.offsetY);
+      ctx.stroke(); // draw
+  
+      // update last position
+      [lastX, lastY] = [e.offsetX, e.offsetY];
+  }
+  ```
+
+- HSL (for *hue*, saturation, lightness) 
+  - hue 는 0 ~ 360 사이의 값으로, 색상 지정 가능.
+  - https://mothereffinghsl.com/
+
+
+
+
+
+
+
+
 
