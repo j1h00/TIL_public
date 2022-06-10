@@ -54,14 +54,67 @@
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
   - 따라서 `map()` 함수를 사용할 수 없다.  
 
+### [Array cardio 1](./04 - Array Cardio Day 1)
+
+- `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다. 
+  - 따라서 `map()` 함수를 사용할 수 없다.  
+
+
+
 
 
 ### [Flex Panel Gallery](./05 - Flex Panel Gallery)
 
 All about CSS
 
-- `flex` 속성 
-  - `flex: 1` 
-  - `flex: 1 0 auto` 
-  - 
+- `flex` 속성으로 flex children 의 비율을 조절 가능하다. 
+- `flex: 1` 
+
+- `transitionend` 이벤트를 리슨하고, 
+  - `event.propertyName` 으로 transition 이 종료된 이벤트의 이름을 가져올 수 있다. 
+
+ 
+
+### [Type Ahead](./06 - Type Ahead/)
+
+- `fetch()` 는 `Promise` 객체를 리턴한다. 
+
+  - 따라서 `.then()` 메서드를 사용한다. 
+
+  ```javascript
+  const cities = []
+  
+  fetch(endpoint)
+      .then(blob => blob.json())
+      .then(data => cities.push(...data));
+  ```
+
+  - 또한 데이터를 얻기 위해선, `__proto__` 인 `Response` 객체의 `.json()` 메서드를 사용한다. 
+
+  - `let` 이 아닌 `const` 로 선언한 cities 에 데이터를 넣을 땐, push 와 spread syntax 를 사용 
+
+- string to Regex 
+
+  - `'gi'` : global + insensitive(lower + upper)
+
+  ```js
+  function findMatches(wordToMatch, cities) {
+      return cities.filter((place) => {
+          const regex = new RegExp(wordToMatch, "gi");
+          return place.city.match(regex) || place.state.match(regex);
+      });
+  }
+  ```
+
+- `change` vs `keyup`
+  - `change` 는 input 에서 focues off 될 때 trigger 된다. 
+  - `keyup` 을 사용해야 매 번 타이핑할 때 trigger 할 수 있다. 
+
+- parse number with commas
+
+  ```js
+  function numberWithCommas(x) {
+  	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  ```
 
