@@ -137,3 +137,18 @@ All about CSS
 - HSL (for _hue_, saturation, lightness)
   - hue 는 0 ~ 360 사이의 값으로, 색상 지정 가능.
   - https://mothereffinghsl.com/
+
+### [Dev Tools](./09%20-%20Dev%20Tools%20Domination)
+
+console methods
+
+- `log()`, `warn()`, `error()`, `info()`, `dir()`, `clear()`, `table()`
+
+- `assert()`
+
+  ```js
+  console.assert(p.classList.contains("ouch"), "That is wrong!");
+  ```
+
+- `group(id) || groupCollapsed(id)` + `groupEnd(id)`
+- `time(id)` + `timeEnd(id)`
