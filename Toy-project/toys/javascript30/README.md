@@ -45,7 +45,7 @@
   - 사용 시엔, 선택한 요소의 `dataset` 속성에 접근하여 사용
     - `const suffix = this.dataset.sizing || "";`
 
-### [Array cardio 1](./04%20-%20Array%20Cardio%20Day 1)
+### [Array cardio 1](./04%20-%20Array%20Cardio%20Day%201)
 
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다.
   - 따라서 `map()` 함수를 사용할 수 없다.
@@ -104,7 +104,7 @@ All about CSS
   }
   ```
 
-### [Array cardio 2](./07%20-%20Array%20Cardio%20Day 2)
+### [Array cardio 2](./07%20-%20Array%20Cardio%20Day%202)
 
 - `some()`, `every()`, `find()`, `findIndex()`
 
