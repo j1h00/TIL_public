@@ -50,6 +50,9 @@ def findCheapestPrice(self, n, flights, src, dst, k):
 
     heap = [(0, src, k + 1)]
     # 우선 순위 큐 최소값 기준으로 도착점까지 최소 비용 판별
+    # heapq 에 의해, 비용이 큰 경로는 자동적으로 제외된다.
+    # Dijkstra 알고리즘 작성 시, heapq 에 집어 넣는 것은 후보이고, 
+    # heapq 에서 빼낼 때 비로소 방문했다고 생각하면 이해하기 쉬운 것 같다.
     while heap:
         p, i, k = heapq.heappop(heap) # min-heap => lowest price 
         if i == dst:
