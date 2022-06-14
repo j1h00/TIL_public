@@ -96,10 +96,3 @@ CPU가 요청한 데이터가 캐시에 있으면 **Cache Hit**, 없으서 DRAM 
 2. Conflict Miss : 캐시 메모리에 A와 B 데이터를 저장해야 하는데, A와 B가 같은 캐시 메모리 주소에 할당되어 있어서 나는 미스 (direct mapped cache에서 많이 발생)
 3. Capacity Miss : 캐시 메모리의 공간이 부족해서 나는 미스 (Conflict는 주소 할당 문제, Capacity는 공간 문제)
    - 캐시 메모리 공간을 키워서 해결하는 경우, 캐시 접근 속도가 느려지고 파워의 소모가 크다. 
-
-
-
-
-
-
-
