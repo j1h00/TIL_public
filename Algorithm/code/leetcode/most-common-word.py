@@ -39,8 +39,8 @@ class Solution:
         words = re.findall(r'\w+', p.lower())
         return collections.Counter(w for w in words if w not in ban).most_common(1)[0][0]
 
-# \w : word 
-# \W : non-word
+# \w : alpha + numeric => [a-zA-Z0-9_] 
+# \W : non-alphanumeric => [^a-zA-Z0-9_] 
 # regex split
 import re
 
