@@ -70,5 +70,3 @@ class Solution:
         # BFS 반복 횟수 == 깊이
         return depth
 
-
-
