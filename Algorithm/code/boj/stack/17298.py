@@ -16,9 +16,11 @@ A_list = list(map(int, sys.stdin.readline().split()))
 # stack 사용!
 answer = [-1] * N 
 stack = [0]
-for i in range(1, N):
+
+for i in range(1, N): # 1부터 시작 
     while stack and A_list[stack[-1]] < A_list[i]: # ex) => 처음엔 A[0] vs A[1] 
-        answer[stack.pop()] = A_list[i] # A[1] 이 더 크다면 answer[0] 을 A[1] 로 업데이트 (NGE(0) = A[1])
+        answer[stack.pop()] = A_list[i]            # A[1] 이 더 크다면 answer[0] 을 A[1] 로 업데이트 (NGE(0) = A[1])
+
     stack.append(i) # 오큰수를 구하지 못하였더라도, stack 에 추가해야함. => while 문을 돌면서 stack 에 있는 모든 수를 비교 
 
 print(*answer)
