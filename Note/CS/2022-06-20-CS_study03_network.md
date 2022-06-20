@@ -8,7 +8,10 @@
 
 ## OSI 7 layers
 
-<img src="https://raonsecure.raonctf.com/static/essential/images/network/network_layer_02.jpg" alt="max-heap"/>
+인터넷 프로토콜 스위트(internet protocol suite) 는 인터넷에서 컴퓨터들이 서로 정보를 주고 받는 데 쓰이는 프로토콜의 집합이다.
+프토로콜의 네트워킹 범위에 따라 다음과 같이 추상화 계층으로 나눈다.
+
+<img src="./image/network_layer.jpg" alt="max-heap"/>
 
 <br />
 
@@ -53,9 +56,9 @@ A-P-S-T-N-D-P
 아페서 터(지)니 뒤(에서) 피(가 나더라)
 <br />
 
-계층 간 데이터 송수신 과정
+### 계층 간 데이터 송수신 과정
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/OSI_Model_v1.svg/870px-OSI_Model_v1.svg.png" alt="max-heap" style="zoom: 25%;"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/OSI_Model_v1.svg/870px-OSI_Model_v1.svg.png" alt="max-heap" style="zoom: 50%;"/>
 
 데이터 단위
 
