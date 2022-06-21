@@ -6,17 +6,28 @@
 
 - vanilla JS 연습을 위해 위 강좌를 보고 진행한 토이 프로젝트
 
+----
+
 ### [Drum kit](./01%20-%20JavaScript%20Drum%20Kit)
 
 - data-key 를 이용한 DOM select
+
+  ```js
+  const audio = document.querySelector(`audio[data-key="${e.key}"]`);
+  const key = document.querySelector(`.key[data-key="${e.key}"]`);
+  ```
+
 - [keycode info](https://www.toptal.com/developers/keycode)
 
   - `event.keycode` is deprecated => use `event.key `
 
 - audio element 는 play 로 실행 가능
+
 - `key.classList.remove('playing')`
   - `setTimeOut` ?
   - `key.addEventListener('transitioned', removeTransition)`
+
+----
 
 ### [Clock](./02%20-%20JS%20and%20CSS%20Clock)
 
@@ -25,6 +36,8 @@
 - `transition-timing-function` 으로 시침이 틱틱 거리는 걸 표현 가능
   - `cubic-bezier(0.1, 2.7, 0.58, 1)`
 - easy
+
+----
 
 ### [CSS variables](./03%20-%20CSS%20Variables)
 
@@ -45,10 +58,14 @@
   - 사용 시엔, 선택한 요소의 `dataset` 속성에 접근하여 사용
     - `const suffix = this.dataset.sizing || "";`
 
+----
+
 ### [Array cardio 1](./04%20-%20Array%20Cardio%20Day%201)
 
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다.
   - 따라서 `map()` 함수를 사용할 수 없다.
+
+----
 
 ### [Flex Panel Gallery](./05%20-%20Flex%20Panel%20Gallery)
 
@@ -59,6 +76,8 @@ All about CSS
 
 - `transitionend` 이벤트를 리슨하고,
   - `event.propertyName` 으로 transition 이 종료된 이벤트의 이름을 가져올 수 있다.
+
+----
 
 ### [Type Ahead](./06%20-%20Type%20Ahead/)
 
@@ -104,6 +123,8 @@ All about CSS
   }
   ```
 
+---
+
 ### [Array cardio 2](./07%20-%20Array%20Cardio%20Day%202)
 
 - `some()`, `every()`, `find()`, `findIndex()`
@@ -114,6 +135,8 @@ All about CSS
   const index = comments.findIndex((comment) => comment.id === 823423);
   comments.splice(index, 1);
   ```
+
+---
 
 ### [HTML canvas](./08%20-%20Fun%20with%20HTML5%20Canvas)
 
@@ -138,6 +161,8 @@ All about CSS
   - hue 는 0 ~ 360 사이의 값으로, 색상 지정 가능.
   - https://mothereffinghsl.com/
 
+---
+
 ### [Dev Tools](./09%20-%20Dev%20Tools%20Domination)
 
 console methods
@@ -152,3 +177,79 @@ console methods
 
 - `group(id) || groupCollapsed(id)` + `groupEnd(id)`
 - `time(id)` + `timeEnd(id)`
+
+---
+
+### [Hold Shift](./10%20-%20Hold%20Shift%20and%20Check%20Checkboxes)
+
+- attribute 로 element 를 선택할 때는 아래와 같다. 
+
+  `selector[attr]` : attribute 를 가지는 elements
+
+  `selector[attr=""]` : value 가 일치할 때 
+
+  ````js
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
+  ````
+
+- `e.shiftKey : boolean` 
+
+  shiftKey pressed 여부를 확인 가능 
+
+- `<input type="checkbox>` 는 value 대신 `checkbox.checked` 를 이용한다. 
+
+---
+
+# [Custom Video Player](./11%20-%20Custom%20Video%20Player)
+
+- `video` element
+
+  `video.paused` 속성을 가진다. `video.playing` 은 없음..
+
+  ```js
+  function togglePlay() {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+  }
+  
+  // or 
+  function togglePlay() {
+      const method = video.pasued ? 'play' : 'pause'
+      video[method]();
+  }
+  ```
+
+  - `video.play()`, `video.pause()` 
+  - `video.currentTime`, `video.duration` 
+
+- `textContent` vs `innerText`
+
+  - textContent 는 `<script>`, `<style>` 태그와 상관 없이 텍스트 값을 그대로 보여주고 
+  - innterText 는 Element 내에 사용자에게 보여지는 그대로 텍스트를 가져온다. 따라서 `display: none` 속성을 가진 텍스트는 가져오지 않는다. 
+
+- `flex-bais` CSS 속성을 이용하여 progress bar 표현 가능
+
+  `e.offsetX` `element.offsetWidth` ... 
+
+
+
+# [Key Sequence](12 - Key Sequence Detection)
+
+연속된 키를 입력으로 받았을 때.. 
+
+- `Array.splice(start, deleteCount, ...pushItems)`
+
+  `Array.slice()` 와 다른 인자를 받는 것을 항상 주의하자. 
+
+  ```js
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+  })
+  ```
+
+  - `pressed` 의 길이를 `secretCode` 의 길이 이하로 유지 가능하다.
+
