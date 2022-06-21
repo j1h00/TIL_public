@@ -234,7 +234,7 @@ console methods
 
   `e.offsetX` `element.offsetWidth` ... 
 
-
+---
 
 # [Key Sequence](12 - Key Sequence Detection)
 
@@ -252,4 +252,143 @@ console methods
   ```
 
   - `pressed` 의 길이를 `secretCode` 의 길이 이하로 유지 가능하다.
+
+---
+
+# [Slide in on Scroll](./13%20-%20Slide%20in%20on%20Scroll)
+
+`opacity: 0; translateX(-30%)` 속성을 가지는 이미지에 `.active` 클래스를 부여하여 `opacity: 1; translateX(0%)` 를 적용한다. 
+
+#### debounce
+
+`'scroll'` 이벤트 사용 시 , 너무 많은 trigger  로 성능 이슈가 발생 가능 =>  `debounce()` 를 이용한다. 
+
+>https://7942yongdae.tistory.com/111
+>
+>https://leonkong.cc/posts/debounce-js.html
+
+예전 `searchBar` 에 적용한 것과 같이, 모든 이벤트에 대해 함수를 실행하지 않고, `setTimeout()` 을 이용하여 일정 시간 간격 이상으로만 실행되도록 하자!!
+
+```js
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+```
+
+#### scroll 
+
+`window.scrollY` : 최상단으로부터 얼마나(px) 스크롤 했는지 
+
+`window.scrollY + window.innerHeight`: 브라우저 창 하단의 위치
+
+
+
+`sliderImage.offsetTop`:  윈도우 최상단으로부터 이미지의 위치
+
+`sliderImage.offsetTop + sliderImage.height`: 이미지 하단의 위치
+
+
+
+따라서 스크롤 시 `현재 화면의 최하단 위치`가 이미지의 절반 위치보다 아래에 있고, `현재 화면의 최상단 위치` 가 이미지의 최하단 위치보단 위에 있을 때
+
+```js
+        const nowBottom = window.scrollY + window.innerHeight
+        // bottom of image
+        const imageBottom = sliderImage.offsetTop + sliderImage.height
+        const isHalfShown = nowBottom > sliderImage.offsetTop + sliderImage.height / 2; 
+        const isNotScrolledPast = window.scrollY < imageBottom;
+
+        if (isHalfShown && isNotScrolledPast) {
+          sliderImage.classList.add('active');
+        } else {
+          sliderImage.classList.remove('active');
+        }
+```
+
+---
+
+#  [reference vs copy](./14%20-%20JavaScript%20References%20VS%20Copying)
+
+how to deepcopy?
+
+```js 
+const dev = JSON.parse(JSON.stringify(twoLevel));
+```
+
+```js
+const _ = require("lodash");
+
+const clone = _.cloneDeep(original);
+```
+
+---
+
+#  [LocalStorage & delegation](./15%20-%20LocalStorage)
+
+`<form>` 은 `submit` 이벤트를 트리거
+
+- `e.preventDefault()` 로 페이지 리로드를 방지한다.
+
+
+
+`<input>` 내의 checked 속성은 있기만 하면 무조건 체크 상태이다 
+
+```js
+<li>
+  <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? "checked" : ""}/>
+	<label for="item${i}">${plate.text}</label>
+</li>
+```
+
+아래 CSS 를 이용하면, checked 속성 여부에 따라 아이콘 변경 가능 
+
+```css
+.plates input + label:before {
+  content: "⬜️";
+  margin-right: 10px;
+}
+
+.plates input:checked + label:before {
+  content: "🌮";
+}
+```
+
+#### localstorage
+
+persist state  (even when reload) with localstorage
+
+localStorage 는 js Object 를 다룰 수 없으므로, object 저장 시 문자열로 변환이 필요하다 
+
+```js
+localStorage.setItem('items', JSON.stringify(items))
+
+JSON.parse(localStorage.getItem('items'))
+```
+
+
+
+#### Event Delegation
+
+- list 에 item 이 계속 추가되는 상황에서, 
+
+  - 이후에 추가된 item 에 까지 eventListener 를 달아주기 위해선..
+
+  - `<li>` 상위의 `<ul>` 을 이용하자. 
+
+
+
+
+
+
 
