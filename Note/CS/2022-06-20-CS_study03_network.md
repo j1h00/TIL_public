@@ -1,6 +1,6 @@
 # CS study : 03 TCP & UDP
 
-> [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)/**DataStructure**/
+> [Interview_Question_for_Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)/**Network**/
 >
 > [개념 정리 - (8) 컴퓨터 네트워크 편 by 정주홍](https://brunch.co.kr/@toughrogrammer/16)
 

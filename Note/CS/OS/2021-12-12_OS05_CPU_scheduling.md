@@ -177,7 +177,7 @@
 - FCFS scheduling algorithm is non-preemptive
 - The performance in a dynamic situation:
   - What if we have one CPU-bound and many I/O-bound processes?
-- **Canvoy Effect**:
+- **Convoy Effect**:
   - all the other processes wait for the one big process to get off the CPU
   - results in lower CPU and device utilization than might be possible
   - if the shorter processes were allowed to go first
@@ -207,7 +207,7 @@
 
 **Can you implement the SJF scheduling?**
 
-- There is **now way** to know the length of the next CPU burst
+- There is **no way** to know the length of the next CPU burst
 - Try to approximate the SJF scheduling : 
   - We may be able to predict the length of the next CPU.
   - Pick a process with the shortest **predicted** CPU burst 
@@ -261,7 +261,7 @@
 - Round-Robin : ***preemptive FCFS*** with ***a time quantum*** (시분할)
 - A ***time quantum*** ( or time slice) is a small unit of time
   - generally from 10 to 100 milliseconds in length
-- The ready queue is tread as a ***circular queue***
+- The ready queue is treat as a ***circular queue***
 - The scheduler goes around the ready queue,
   - allocating the CPU to each process
   - for a time interval of up to 1 time quantum
