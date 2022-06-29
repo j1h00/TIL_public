@@ -6,7 +6,7 @@
 
 - vanilla JS 연습을 위해 위 강좌를 보고 진행한 토이 프로젝트
 
-----
+---
 
 ### [Drum kit](./01%20-%20JavaScript%20Drum%20Kit)
 
@@ -27,7 +27,7 @@
   - `setTimeOut` ?
   - `key.addEventListener('transitioned', removeTransition)`
 
-----
+---
 
 ### [Clock](./02%20-%20JS%20and%20CSS%20Clock)
 
@@ -37,7 +37,7 @@
   - `cubic-bezier(0.1, 2.7, 0.58, 1)`
 - easy
 
-----
+---
 
 ### [CSS variables](./03%20-%20CSS%20Variables)
 
@@ -58,14 +58,14 @@
   - 사용 시엔, 선택한 요소의 `dataset` 속성에 접근하여 사용
     - `const suffix = this.dataset.sizing || "";`
 
-----
+---
 
 ### [Array cardio 1](./04%20-%20Array%20Cardio%20Day%201)
 
 - `querySelectorAll()` 는 `NodeList` 타입의 리스트를 반환한다.
   - 따라서 `map()` 함수를 사용할 수 없다.
 
-----
+---
 
 ### [Flex Panel Gallery](./05%20-%20Flex%20Panel%20Gallery)
 
@@ -77,7 +77,7 @@ All about CSS
 - `transitionend` 이벤트를 리슨하고,
   - `event.propertyName` 으로 transition 이 종료된 이벤트의 이름을 가져올 수 있다.
 
-----
+---
 
 ### [Type Ahead](./06%20-%20Type%20Ahead/)
 
@@ -182,21 +182,21 @@ console methods
 
 ### [Hold Shift](./10%20-%20Hold%20Shift%20and%20Check%20Checkboxes)
 
-- attribute 로 element 를 선택할 때는 아래와 같다. 
+- attribute 로 element 를 선택할 때는 아래와 같다.
 
   `selector[attr]` : attribute 를 가지는 elements
 
-  `selector[attr=""]` : value 가 일치할 때 
+  `selector[attr=""]` : value 가 일치할 때
 
-  ````js
-  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')
-  ````
+  ```js
+  const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+  ```
 
-- `e.shiftKey : boolean` 
+- `e.shiftKey : boolean`
 
-  shiftKey pressed 여부를 확인 가능 
+  shiftKey pressed 여부를 확인 가능
 
-- `<input type="checkbox>` 는 value 대신 `checkbox.checked` 를 이용한다. 
+- `<input type="checkbox>` 는 value 대신 `checkbox.checked` 를 이용한다.
 
 ---
 
@@ -208,47 +208,47 @@ console methods
 
   ```js
   function togglePlay() {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
   }
-  
-  // or 
+
+  // or
   function togglePlay() {
-      const method = video.pasued ? 'play' : 'pause'
-      video[method]();
+    const method = video.pasued ? "play" : "pause";
+    video[method]();
   }
   ```
 
-  - `video.play()`, `video.pause()` 
-  - `video.currentTime`, `video.duration` 
+  - `video.play()`, `video.pause()`
+  - `video.currentTime`, `video.duration`
 
 - `textContent` vs `innerText`
 
-  - textContent 는 `<script>`, `<style>` 태그와 상관 없이 텍스트 값을 그대로 보여주고 
-  - innterText 는 Element 내에 사용자에게 보여지는 그대로 텍스트를 가져온다. 따라서 `display: none` 속성을 가진 텍스트는 가져오지 않는다. 
+  - textContent 는 `<script>`, `<style>` 태그와 상관 없이 텍스트 값을 그대로 보여주고
+  - innterText 는 Element 내에 사용자에게 보여지는 그대로 텍스트를 가져온다. 따라서 `display: none` 속성을 가진 텍스트는 가져오지 않는다.
 
 - `flex-bais` CSS 속성을 이용하여 progress bar 표현 가능
 
-  `e.offsetX` `element.offsetWidth` ... 
+  `e.offsetX` `element.offsetWidth` ...
 
 ---
 
-# [Key Sequence](12 - Key Sequence Detection)
+# [Key Sequence](./12%20-%20Key%20Sequence%20Detection)
 
-연속된 키를 입력으로 받았을 때.. 
+연속된 키를 입력으로 받았을 때..
 
 - `Array.splice(start, deleteCount, ...pushItems)`
 
-  `Array.slice()` 와 다른 인자를 받는 것을 항상 주의하자. 
+  `Array.slice()` 와 다른 인자를 받는 것을 항상 주의하자.
 
   ```js
-  window.addEventListener('keyup', (e) => {
+  window.addEventListener("keyup", (e) => {
     pressed.push(e.key);
     pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
-  })
+  });
   ```
 
   - `pressed` 의 길이를 `secretCode` 의 길이 이하로 유지 가능하다.
@@ -257,72 +257,69 @@ console methods
 
 # [Slide in on Scroll](./13%20-%20Slide%20in%20on%20Scroll)
 
-`opacity: 0; translateX(-30%)` 속성을 가지는 이미지에 `.active` 클래스를 부여하여 `opacity: 1; translateX(0%)` 를 적용한다. 
+`opacity: 0; translateX(-30%)` 속성을 가지는 이미지에 `.active` 클래스를 부여하여 `opacity: 1; translateX(0%)` 를 적용한다.
 
 #### debounce
 
-`'scroll'` 이벤트 사용 시 , 너무 많은 trigger  로 성능 이슈가 발생 가능 =>  `debounce()` 를 이용한다. 
+`'scroll'` 이벤트 사용 시 , 너무 많은 trigger 로 성능 이슈가 발생 가능 => `debounce()` 를 이용한다.
 
->https://7942yongdae.tistory.com/111
+> https://7942yongdae.tistory.com/111
 >
->https://leonkong.cc/posts/debounce-js.html
+> https://leonkong.cc/posts/debounce-js.html
 
 예전 `searchBar` 에 적용한 것과 같이, 모든 이벤트에 대해 함수를 실행하지 않고, `setTimeout()` 을 이용하여 일정 시간 간격 이상으로만 실행되도록 하자!!
 
 ```js
-    function debounce(func, wait = 20, immediate = true) {
-      var timeout;
-      return function() {
-        var context = this, args = arguments;
-        var later = function() {
-          timeout = null;
-          if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-      };
-    }
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
 ```
 
-#### scroll 
+#### scroll
 
-`window.scrollY` : 최상단으로부터 얼마나(px) 스크롤 했는지 
+`window.scrollY` : 최상단으로부터 얼마나(px) 스크롤 했는지
 
 `window.scrollY + window.innerHeight`: 브라우저 창 하단의 위치
 
-
-
-`sliderImage.offsetTop`:  윈도우 최상단으로부터 이미지의 위치
+`sliderImage.offsetTop`: 윈도우 최상단으로부터 이미지의 위치
 
 `sliderImage.offsetTop + sliderImage.height`: 이미지 하단의 위치
-
-
 
 따라서 스크롤 시 `현재 화면의 최하단 위치`가 이미지의 절반 위치보다 아래에 있고, `현재 화면의 최상단 위치` 가 이미지의 최하단 위치보단 위에 있을 때
 
 ```js
-        const nowBottom = window.scrollY + window.innerHeight
-        // bottom of image
-        const imageBottom = sliderImage.offsetTop + sliderImage.height
-        const isHalfShown = nowBottom > sliderImage.offsetTop + sliderImage.height / 2; 
-        const isNotScrolledPast = window.scrollY < imageBottom;
+const nowBottom = window.scrollY + window.innerHeight;
+// bottom of image
+const imageBottom = sliderImage.offsetTop + sliderImage.height;
+const isHalfShown = nowBottom > sliderImage.offsetTop + sliderImage.height / 2;
+const isNotScrolledPast = window.scrollY < imageBottom;
 
-        if (isHalfShown && isNotScrolledPast) {
-          sliderImage.classList.add('active');
-        } else {
-          sliderImage.classList.remove('active');
-        }
+if (isHalfShown && isNotScrolledPast) {
+  sliderImage.classList.add("active");
+} else {
+  sliderImage.classList.remove("active");
+}
 ```
 
 ---
 
-#  [reference vs copy](./14%20-%20JavaScript%20References%20VS%20Copying)
+# [reference vs copy](./14%20-%20JavaScript%20References%20VS%20Copying)
 
 how to deepcopy?
 
-```js 
+```js
 const dev = JSON.parse(JSON.stringify(twoLevel));
 ```
 
@@ -334,15 +331,13 @@ const clone = _.cloneDeep(original);
 
 ---
 
-#  [LocalStorage & delegation](./15%20-%20LocalStorage)
+# [LocalStorage & delegation](./15%20-%20LocalStorage)
 
 `<form>` 은 `submit` 이벤트를 트리거
 
 - `e.preventDefault()` 로 페이지 리로드를 방지한다.
 
-
-
-`<input>` 내의 checked 속성은 있기만 하면 무조건 체크 상태이다 
+`<input>` 내의 checked 속성은 있기만 하면 무조건 체크 상태이다
 
 ```js
 <li>
@@ -351,7 +346,7 @@ const clone = _.cloneDeep(original);
 </li>
 ```
 
-아래 CSS 를 이용하면, checked 속성 여부에 따라 아이콘 변경 가능 
+아래 CSS 를 이용하면, checked 속성 여부에 따라 아이콘 변경 가능
 
 ```css
 .plates input + label:before {
@@ -366,29 +361,20 @@ const clone = _.cloneDeep(original);
 
 #### localstorage
 
-persist state  (even when reload) with localstorage
+persist state (even when reload) with localstorage
 
-localStorage 는 js Object 를 다룰 수 없으므로, object 저장 시 문자열로 변환이 필요하다 
+localStorage 는 js Object 를 다룰 수 없으므로, object 저장 시 문자열로 변환이 필요하다
 
 ```js
-localStorage.setItem('items', JSON.stringify(items))
+localStorage.setItem("items", JSON.stringify(items));
 
-JSON.parse(localStorage.getItem('items'))
+JSON.parse(localStorage.getItem("items"));
 ```
-
-
 
 #### Event Delegation
 
-- list 에 item 이 계속 추가되는 상황에서, 
+- list 에 item 이 계속 추가되는 상황에서,
 
   - 이후에 추가된 item 에 까지 eventListener 를 달아주기 위해선..
 
-  - `<li>` 상위의 `<ul>` 을 이용하자. 
-
-
-
-
-
-
-
+  - `<li>` 상위의 `<ul>` 을 이용하자.
