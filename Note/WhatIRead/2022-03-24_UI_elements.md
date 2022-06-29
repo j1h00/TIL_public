@@ -13,6 +13,27 @@
 UI 는 보통 아래 네가지 분류에 해당한다고 한다. 
 
 >1. Input Controls
+>
+>   
+>
 >2. Navigation Components
+>
+>   
+>
 >3. Informational Components
+>
+>   
+>
 >4. Containers
+
+아래와 같이, 단순한 메뉴 및 옵션 더보기 표시를 각각 다르게 표시할 수 있다. 
+
+1. Bento Menu 
+2. Doner Menu 
+3. Hamburger Menu 
+4. Kebab Menu 
+5. Meatballs Menu
+
+
+
+자세한 내용은 원문 블로그 확인!
