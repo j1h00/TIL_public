@@ -200,7 +200,7 @@ console methods
 
 ---
 
-# [Custom Video Player](./11%20-%20Custom%20Video%20Player)
+### [Custom Video Player](./11%20-%20Custom%20Video%20Player)
 
 - `video` element
 
@@ -236,7 +236,7 @@ console methods
 
 ---
 
-# [Key Sequence](./12%20-%20Key%20Sequence%20Detection)
+### [Key Sequence](./12%20-%20Key%20Sequence%20Detection)
 
 연속된 키를 입력으로 받았을 때..
 
@@ -255,7 +255,7 @@ console methods
 
 ---
 
-# [Slide in on Scroll](./13%20-%20Slide%20in%20on%20Scroll)
+### [Slide in on Scroll](./13%20-%20Slide%20in%20on%20Scroll)
 
 `opacity: 0; translateX(-30%)` 속성을 가지는 이미지에 `.active` 클래스를 부여하여 `opacity: 1; translateX(0%)` 를 적용한다.
 
@@ -315,7 +315,7 @@ if (isHalfShown && isNotScrolledPast) {
 
 ---
 
-# [reference vs copy](./14%20-%20JavaScript%20References%20VS%20Copying)
+### [reference vs copy](./14%20-%20JavaScript%20References%20VS%20Copying)
 
 how to deepcopy?
 
@@ -331,7 +331,7 @@ const clone = _.cloneDeep(original);
 
 ---
 
-# [LocalStorage & delegation](./15%20-%20LocalStorage)
+### [LocalStorage & delegation](./15%20-%20LocalStorage)
 
 `<form>` 은 `submit` 이벤트를 트리거
 
