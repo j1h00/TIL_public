@@ -4,12 +4,12 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function (s) {
+function isPalindrome(s) {
   const regex = /[^a-z0-9]/gi;
   const newString = s.replace(regex, "").toLowerCase();
 
-  i = 0;
-  j = newString.length - 1;
+  let i = 0;
+  let j = newString.length - 1;
 
   while (i <= j) {
     if (newString[i] !== newString[j]) {
@@ -20,4 +20,4 @@ var isPalindrome = function (s) {
   }
 
   return true;
-};
+}
