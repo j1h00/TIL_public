@@ -1,4 +1,4 @@
-# interview questions : quotalab & goodgang labs
+# interview questions : quotalab 02
 
 ## 쿼타랩 직무 심화  
 
@@ -34,12 +34,28 @@
 >
 >async & await 이 가독성을 높여준다는게 어떤 뜻인가요?
 
+- 가독성 좋게 비동기 처리를 동기 처리처럼 동작하도록 구현할 수 있다. 
+  - 프로미스의 후속 처리 메서드 없이 마치 동기 처리처럼 프로미스가 처리 결과를 반환하도록 구현할 수 있다. 
+  - 에러 핸들링에서, `.catch()` 문을 사용하지 않고, `try / catch` 를 통해 에러 처리
+
+
+
 >함수 컴포넌트는 사실상 리렌더 되면서 다시 실행되는 것과 마찬가지인데, state 가 어떻게 유지되나요?
 
+[Deep dive: How do React hooks really work?](https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/)
+
+=> may be `closure`
+
 >Javascript 에서 어떤 함수의 데이터? 상태? 를 유지하기 위해 사용하는 방법에 대해 아나요?  
+
+closure?
 
 >hook 에 대해 알고 있나요? 
 >
 >hook 을 왜 사용하나요?
+
+함수 컴포넌트에선, state 와 라이프사이클 API 의 사용이 불가능했는데, `v16.8` 업데이트 이후 hooks 를 적용하여 해결하였다. 
+
+
 
 >지후님이 컴포넌트를 작성할 때 고려하는 게 있나요?
