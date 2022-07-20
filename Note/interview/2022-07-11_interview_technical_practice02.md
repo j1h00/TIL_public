@@ -73,4 +73,13 @@ TCP 는 전송 계층의 프로토콜로,
    - AIMD(Additive Increase, Multiplicative Decrease)
    - `+` slow start, fast retransmit, fast recovery
 
-   
+
+
+
+React 렌더링 최적화 방법
+
+> [useCallback과 React.Memo을 통한 렌더링 최적화](https://velog.io/@yejinh/useCallback과-React.Memo을-통한-렌더링-최적화)
+
+CORS 관련 개념
+
+> [Same-Origin Policy 동일 출처 정책과 CORS 에러](https://velog.io/@yejinh/CORS-4tk536f0db)

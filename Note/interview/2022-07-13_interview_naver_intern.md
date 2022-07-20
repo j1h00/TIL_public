@@ -24,6 +24,8 @@
 
 >var, let, const 에 대해 설명 + 가장 큰 차이에 대해 설명해주세요
 
+>JavaScript 의 비동기 처리 방법 세가지에 대해 설명해주세요.
+
 
 
 >event binding 에 대해 설명해주세요

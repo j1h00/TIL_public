@@ -65,6 +65,18 @@ useEffect 내에서 데이터를 fetching 하는 코드를 작성하면서 loadi
 
 1번 방법이 react 라이프사이클과 useEffect 를 동작 방식에 맞게 잘 이용하는 방법이라고 생각되어 1번으로 해결하였다. 
 
+```js
+useEffect(() => {
+  let isMounted = true;               // note mutable flag
+  someAsyncOperation().then(data => {
+    if (isMounted) setState(data);    // add conditional check
+  })
+  return () => { isMounted = false }; // cleanup toggles value, if unmounted
+}, []);                               // adjust dependencies to your needs
+```
+
+
+
 이를 통해 React Component 의 Lifecycle과 useEffect 내에서 비동기 함수의 동작 방식에 대해 고민하게 되었고, 백엔드에 데이터를 요청하는 간단한 코드라도 React 와 JavaScript 의 동작 방식에 대해 신경써야 함을 알게 되었다. 
 
 
@@ -103,19 +115,10 @@ useEffect 내에서 데이터를 fetching 하는 코드를 작성하면서 loadi
 > 팀원들과 협업하며 어려웠던 점이 무엇인가요?
 >
 
+기획 단계에서 의견 충돌
 
+정말 나쁘게 바라보면 우유부단 하다고 생각할 수 있겠지만, 중립적인 상태에서 서로 다른 의견들을 바라보는 게 좋다고 생각하고, 그렇게 하려고 노력합니다. 
 
+저희가 고민하는 선택지들은 대부분 장단점이 같이 존재하고 여러 가지 가능성이 열려있기 때문에, 어느 하나가 무조건 옳다고 생각하게 되는 경우는 잘 없는 것 같다. 
 
-
-## 기술
-
-React 렌더링 최적화 방법 
-
->[useCallback과 React.Memo을 통한 렌더링 최적화](https://velog.io/@yejinh/useCallback%EA%B3%BC-React.Memo%EC%9D%84-%ED%86%B5%ED%95%9C-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%B5%9C%EC%A0%81%ED%99%94)
-
-CORS 관련 개념
-
->[Same-Origin Policy 동일 출처 정책과 CORS 에러](https://velog.io/@yejinh/CORS-4tk536f0db)
-
-
-
+따라서 팀원들이 자신의 의견을 피력하고 있을떄, 저는 주로 한발짝 밖에서 그 선택지들의 세세한 부분을 검토하고 정리하는 역할을 맡는 것을 좋아합니다. 
